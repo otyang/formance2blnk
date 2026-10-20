@@ -3,7 +3,10 @@ site_description: Migrate a Formance ledger into Blnk — safely, resumably and 
 site_url: https://otyang.github.io/formance2blnk/
 repo_url: https://github.com/otyang/formance2blnk
 repo_name: otyang/formance2blnk
-edit_uri: edit/main/docs/
+docs_dir: docs-src
+site_dir: docs
+exclude_docs: requirements.txt
+edit_uri: edit/main/docs-src/
 copyright: Copyright &copy; 2026 The formance2blnk Authors — MIT License
 
 theme:

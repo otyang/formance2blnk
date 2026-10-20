@@ -33,6 +33,7 @@ check: vet lint race
 
 docs:
 	mkdocs build --strict
+	touch docs/.nojekyll
 
 docs-serve:
 	mkdocs serve

@@ -4,14 +4,14 @@ Thanks for helping improve formance2blnk!
 
 ## Development
 
-Requirements: Go 1.22+. Optional: `golangci-lint`, Python 3 for docs (`pip install -r docs/requirements.txt`).
+Requirements: Go 1.22+. Optional: `golangci-lint`, Python 3 for docs (`pip install -r docs-src/requirements.txt`).
 
 ```bash
 make fmt          # gofmt -s
 make check        # vet, lint (if installed), race tests, gofmt check
 make cover        # coverage report
 make build        # bin/formance2blnk
-make docs         # mkdocs build --strict
+make docs         # build docs-src/ into docs/ (commit the result)
 make docs-serve   # live docs at http://127.0.0.1:8000
 go run ./examples/quickstart
 ```
