@@ -24,7 +24,7 @@ It was built to split a combined fiat and crypto Formance ledger in two. A surge
 
 ## Documentation
 
-📖 The full documentation lives at **[otyang.github.io/formance2blnk](https://otyang.github.io/formance2blnk/)**.
+📖 The full documentation lives at **[otyang.github.io/formance2blnk](https://otyang.github.io/formance2blnk/docs/)**.
 
 | Start here | Guides | Reference |
 | --- | --- | --- |
