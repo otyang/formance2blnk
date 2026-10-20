@@ -28,11 +28,11 @@ It was built to split a combined fiat and crypto Formance ledger in two. A surge
 
 | Start here | Guides | Reference |
 | --- | --- | --- |
-| [Why formance2blnk](https://otyang.github.io/formance2blnk/why/) | [Concepts](https://otyang.github.io/formance2blnk/concepts/) | [Configuration](https://otyang.github.io/formance2blnk/configuration/) |
-| [Getting started](https://otyang.github.io/formance2blnk/getting-started/) | [Strategies](https://otyang.github.io/formance2blnk/strategies/) | [CLI](https://otyang.github.io/formance2blnk/cli/) |
-| [Examples](https://otyang.github.io/formance2blnk/examples/) | [Mapping](https://otyang.github.io/formance2blnk/mapping/) | [Go library](https://otyang.github.io/formance2blnk/library/) |
-| [Troubleshooting](https://otyang.github.io/formance2blnk/troubleshooting/) | [Reconciliation](https://otyang.github.io/formance2blnk/reconciliation/) | [Compatibility](https://otyang.github.io/formance2blnk/compatibility/) |
-| [Changelog](https://otyang.github.io/formance2blnk/changelog/) | [Cutover runbook](https://otyang.github.io/formance2blnk/cutover/) | [API on pkg.go.dev](https://pkg.go.dev/github.com/otyang/formance2blnk) |
+| [Why formance2blnk](https://otyang.github.io/formance2blnk/docs/why/) | [Concepts](https://otyang.github.io/formance2blnk/docs/concepts/) | [Configuration](https://otyang.github.io/formance2blnk/docs/configuration/) |
+| [Getting started](https://otyang.github.io/formance2blnk/docs/getting-started/) | [Strategies](https://otyang.github.io/formance2blnk/docs/strategies/) | [CLI](https://otyang.github.io/formance2blnk/docs/cli/) |
+| [Examples](https://otyang.github.io/formance2blnk/docs/examples/) | [Mapping](https://otyang.github.io/formance2blnk/docs/mapping/) | [Go library](https://otyang.github.io/formance2blnk/docs/library/) |
+| [Troubleshooting](https://otyang.github.io/formance2blnk/docs/troubleshooting/) | [Reconciliation](https://otyang.github.io/formance2blnk/docs/reconciliation/) | [Compatibility](https://otyang.github.io/formance2blnk/docs/compatibility/) |
+| [Changelog](https://otyang.github.io/formance2blnk/docs/changelog/) | [Cutover runbook](https://otyang.github.io/formance2blnk/docs/cutover/) | [API on pkg.go.dev](https://pkg.go.dev/github.com/otyang/docs/formance2blnk) |
 
 ## Install
 
@@ -48,7 +48,7 @@ go get github.com/otyang/formance2blnk@latest
 ```
 
 Prebuilt binaries for Linux, macOS and Windows (amd64/arm64) with checksums are attached to every
-[GitHub release](https://github.com/otyang/formance2blnk/releases).
+[GitHub release](https://github.com/otyang/formance2blnk/docs/releases).
 
 ## Quick start (CLI)
 
@@ -134,7 +134,7 @@ Try it without any servers: `go run ./examples/quickstart`.
 
 ## Compatibility
 
-Built against the Formance Ledger **v2** REST API and the Blnk Core API. Both evolve — run `plan` and a reconciliation against a staging copy first. See [Compatibility](https://otyang.github.io/formance2blnk/compatibility/) for the exact endpoints used.
+Built against the Formance Ledger **v2** REST API and the Blnk Core API. Both evolve — run `plan` and a reconciliation against a staging copy first. See [Compatibility](https://otyang.github.io/formance2blnk/docs/compatibility/) for the exact endpoints used.
 
 ## Contributing
 
