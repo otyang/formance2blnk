@@ -1,0 +1,34 @@
+{
+  "formance": {
+    "url": "https://${FORMANCE_ORG}.${FORMANCE_ENV:-eu.sandbox}.formance.cloud/api/ledger",
+    "ledgers": ["main"],
+    "client_id": "${FORMANCE_CLIENT_ID}",
+    "client_secret": "${FORMANCE_CLIENT_SECRET}",
+    "scopes": ["ledger:read"],
+    "requests_per_second": 20
+  },
+  "blnk": {
+    "url": "${BLNK_URL}",
+    "api_key": "${BLNK_API_KEY}",
+    "requests_per_second": 50
+  },
+  "mapping": {
+    "world_indicator": "@World",
+    "rules": [
+      { "match": "platform:fees", "indicator": "@Fees" },
+      { "match": "banks:*", "indicator": "@Bank-{1}" },
+      { "match": "users:*:wallet", "ledger": "Customer Wallets" },
+      { "match": "sandbox:**", "skip": true }
+    ],
+    "assets": {
+      "COIN": { "currency": "NGN", "decimals": 2 }
+    }
+  },
+  "migration": {
+    "mode": "hybrid",
+    "cutoff": "2026-01-01T00:00:00Z",
+    "reverts": "skip",
+    "on_skipped_account": "drop"
+  },
+  "state_file": "formance2blnk-state/hybrid.json"
+}

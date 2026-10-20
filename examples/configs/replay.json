@@ -1,0 +1,24 @@
+{
+  "formance": {
+    "url": "http://localhost:3068",
+    "ledgers": ["main"],
+    "page_size": 100
+  },
+  "blnk": {
+    "url": "http://localhost:5001",
+    "api_key": "${BLNK_API_KEY:-}"
+  },
+  "mapping": {
+    "rules": [
+      { "match": "platform:fees", "indicator": "@Fees" },
+      { "match": "users:*:wallet", "ledger": "Customer Wallets" },
+      { "match": "merchants:**", "ledger": "Merchants" }
+    ]
+  },
+  "migration": {
+    "mode": "replay",
+    "batch_size": 50,
+    "copy_account_metadata": true
+  },
+  "state_file": "formance2blnk-state/replay.json"
+}

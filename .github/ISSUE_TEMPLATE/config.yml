@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://otyang.github.io/formance2blnk/
+    about: Guides, configuration reference and troubleshooting.
+  - name: Security vulnerability
+    url: https://github.com/otyang/formance2blnk/security/advisories/new
+    about: Please report security issues privately.

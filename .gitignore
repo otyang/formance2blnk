@@ -1,0 +1,10 @@
+/bin/
+/dist/
+/site/
+coverage.out
+*.lock
+formance2blnk-state.json*
+/state/*.json*
+formance2blnk.json
+.venv/
+/formance2blnk-state/

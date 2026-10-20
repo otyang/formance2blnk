@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+bin
+dist
+site
+docs
+coverage.out
+*.lock
+formance2blnk.json
+formance2blnk-state.json*
+/state/*.json*
+/formance2blnk-state

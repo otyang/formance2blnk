@@ -1,0 +1,7 @@
+# Used by GoReleaser: the binary is prebuilt and placed in the build context.
+FROM gcr.io/distroless/static:nonroot
+COPY formance2blnk /usr/local/bin/formance2blnk
+WORKDIR /work
+USER nonroot:nonroot
+ENTRYPOINT ["formance2blnk"]
+CMD ["help"]

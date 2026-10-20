@@ -1,0 +1,22 @@
+{
+  "formance": {
+    "url": "http://localhost:3068",
+    "ledgers": ["main", "payouts"]
+  },
+  "blnk": {
+    "url": "http://localhost:5001",
+    "api_key": "${BLNK_API_KEY:-}"
+  },
+  "mapping": {
+    "default_ledger": "Formance {ledger}",
+    "rules": [
+      { "match": "platform:**", "indicator": "@Platform" }
+    ]
+  },
+  "migration": {
+    "mode": "snapshot",
+    "opening_indicator": "@OpeningBalances",
+    "include_zero_balances": true
+  },
+  "state_file": "formance2blnk-state/snapshot.json"
+}

@@ -1,0 +1,71 @@
+version: 2
+project_name: formance2blnk
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./cmd/formance2blnk
+    env: [CGO_ENABLED=0]
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+    flags: [-trimpath]
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    ldflags:
+      - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+archives:
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    files: [LICENSE, README.md, CHANGELOG.md]
+checksum:
+  name_template: checksums.txt
+dockers:
+  - &docker
+    image_templates: ["ghcr.io/otyang/formance2blnk:{{ .Version }}-amd64"]
+    dockerfile: Dockerfile.release
+    goos: linux
+    goarch: amd64
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+      - --label=org.opencontainers.image.title={{ .ProjectName }}
+      - --label=org.opencontainers.image.description=Migrate a Formance Ledger into Blnk
+      - --label=org.opencontainers.image.url=https://github.com/otyang/formance2blnk
+      - --label=org.opencontainers.image.source=https://github.com/otyang/formance2blnk
+      - --label=org.opencontainers.image.documentation=https://otyang.github.io/formance2blnk/
+      - --label=org.opencontainers.image.version={{ .Version }}
+      - --label=org.opencontainers.image.revision={{ .FullCommit }}
+      - --label=org.opencontainers.image.created={{ .Date }}
+      - --label=org.opencontainers.image.licenses=MIT
+  - <<: *docker
+    image_templates: ["ghcr.io/otyang/formance2blnk:{{ .Version }}-arm64"]
+    goarch: arm64
+    build_flag_templates:
+      - --platform=linux/arm64
+      - --label=org.opencontainers.image.title={{ .ProjectName }}
+      - --label=org.opencontainers.image.description=Migrate a Formance Ledger into Blnk
+      - --label=org.opencontainers.image.url=https://github.com/otyang/formance2blnk
+      - --label=org.opencontainers.image.source=https://github.com/otyang/formance2blnk
+      - --label=org.opencontainers.image.documentation=https://otyang.github.io/formance2blnk/
+      - --label=org.opencontainers.image.version={{ .Version }}
+      - --label=org.opencontainers.image.revision={{ .FullCommit }}
+      - --label=org.opencontainers.image.created={{ .Date }}
+      - --label=org.opencontainers.image.licenses=MIT
+docker_manifests:
+  - name_template: "ghcr.io/otyang/formance2blnk:{{ .Version }}"
+    image_templates:
+      - "ghcr.io/otyang/formance2blnk:{{ .Version }}-amd64"
+      - "ghcr.io/otyang/formance2blnk:{{ .Version }}-arm64"
+  - name_template: "ghcr.io/otyang/formance2blnk:latest"
+    skip_push: auto
+    image_templates:
+      - "ghcr.io/otyang/formance2blnk:{{ .Version }}-amd64"
+      - "ghcr.io/otyang/formance2blnk:{{ .Version }}-arm64"
+release:
+  prerelease: auto
+changelog:
+  sort: asc
+  filters:
+    exclude: ["^docs:", "^test:", "^chore:", "^ci:"]
