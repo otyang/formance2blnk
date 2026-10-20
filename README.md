@@ -20,7 +20,7 @@ Migrate a [Formance Ledger](https://www.formance.com/) (v2 API) into [Blnk](http
 
 ## Why
 
-It was built to split a combined fiat and crypto Formance ledger in two. A surge in crypto activity could slow the fiat rails, and keeping both asset classes in one ledger widened the regulatory audit scope. The fix was full separation: fiat stays on Formance, and crypto moves with all its history to a standalone Blnk instance. `formance2blnk` is the pipeline that moves it and proves nothing was lost. See [Why formance2blnk](https://otyang.github.io/formance2blnk/why/) for the full story and a carve-out configuration.
+It was built to split a combined fiat and crypto Formance ledger in two. A surge in crypto activity could slow the fiat rails, and keeping both asset classes in one ledger widened the regulatory audit scope. The fix was full separation: fiat stays on Formance, and crypto moves with all its history to a standalone Blnk instance. `formance2blnk` is the pipeline that moves it and proves nothing was lost. See [Why formance2blnk](https://otyang.github.io/formance2blnk/docs/why/) for the full story and a carve-out configuration.
 
 ## Documentation
 
