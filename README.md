@@ -1,6 +1,6 @@
 # formance2blnk
 
-[![CI](https://github.com/otyang/formance2blnk/actions/workflows/ci.yml/badge.svg)](https://github.com/otyang/formance2blnk/actions/workflows/ci.yml)
+ 
 [![Go Reference](https://pkg.go.dev/badge/github.com/otyang/formance2blnk.svg)](https://pkg.go.dev/github.com/otyang/formance2blnk)
 [![Release](https://img.shields.io/github/v/release/otyang/formance2blnk?sort=semver)](https://github.com/otyang/formance2blnk/releases)
 [![Go Report Card](https://goreportcard.com/badge/github.com/otyang/formance2blnk)](https://goreportcard.com/report/github.com/otyang/formance2blnk)
